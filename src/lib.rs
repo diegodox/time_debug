@@ -26,7 +26,7 @@ macro_rules! time {
         let time = start_time.elapsed();
         eprintln!(
             "took {}: [{}:{}] {}",
-            humantime::format_duration(time),
+            $crate::_format_duration(time),
             file!(),
             line!(),
             stringify!($fn),
@@ -34,6 +34,8 @@ macro_rules! time {
         ret
     }};
 }
+
+pub use humantime::format_duration as _format_duration;
 
 #[test]
 fn test() {
