@@ -1,12 +1,10 @@
-/// Prints measured time and returns the value of a given expression for quick and dirty
-/// optimizing.
-///
-/// Mesure time to execute given expression and returns the value of a given expression
+/// Prints time to execute given expression and returns the value of a given expression
 /// for quick and dirty time mesuring.
 ///
-/// An example:
+/// # Example
 ///
 /// ```
+/// # use time_debug::time;
 /// # use std::thread::sleep;
 /// # use std::time::Duration;
 /// time!(sleep(Duration::new(2, 0)));
@@ -14,6 +12,7 @@
 /// ```
 ///
 /// ```
+/// # use time_debug::time;
 /// assert_eq!(1 + 2, 3);
 /// assert_eq!(time!(1 + 2), 3);
 /// //         ^--- prints: took 0.01 msec [src/main.rs:2] 1 + 2
